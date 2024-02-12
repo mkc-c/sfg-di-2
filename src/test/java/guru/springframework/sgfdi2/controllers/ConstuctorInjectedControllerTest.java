@@ -1,11 +1,8 @@
 package guru.springframework.sgfdi2.controllers;
 
-import guru.springframework.sgfdi2.services.GreetingServiceImpl;
+import guru.springframework.sgfdi2.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.aop.scope.ScopedProxyUtils;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ConstuctorInjectedControllerTest {
 
@@ -14,7 +11,7 @@ class ConstuctorInjectedControllerTest {
     @BeforeEach
     void setUp() {
 
-        controller = new ConstuctorInjectedController(new GreetingServiceImpl());
+        controller = new ConstuctorInjectedController(new ConstructorGreetingService());
     }
 
     @Test
