@@ -1,9 +1,6 @@
 package guru.springframework.sgfdi2;
 
-import guru.springframework.sgfdi2.controllers.ConstuctorInjectedController;
-import guru.springframework.sgfdi2.controllers.MyController;
-import guru.springframework.sgfdi2.controllers.PropertyInjectedContoller;
-import guru.springframework.sgfdi2.controllers.SetterInjectedController;
+import guru.springframework.sgfdi2.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +10,12 @@ public class SgfDi2Application {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SgfDi2Application.class, args);
+
+		System.out.println("---- Spring Profiles");
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("----- primary bean");
 
