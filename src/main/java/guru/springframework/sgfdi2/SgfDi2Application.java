@@ -14,12 +14,11 @@ public class SgfDi2Application {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SgfDi2Application.class, args);
 
+		System.out.println("----- primary bean");
+
 		MyController myController = (MyController) ctx.getBean("myController");
 
-		String greeting = myController.sayHello();
-
-		System.out.println(greeting);
-
+		System.out.println(myController.sayHello());
 
 		System.out.println("----- property");
 
